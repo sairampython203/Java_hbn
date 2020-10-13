@@ -12,13 +12,13 @@ public class TestHbn {
         Configuration cfg = new Configuration();
         cfg.configure();
         SessionFactory sf = cfg.buildSessionFactory();
-
+        // Employee Obeject creation
         Employee emp = new Employee(222,"BBB",2000.0f);
         Session s = sf.openSession();
         Transaction tx = s.beginTransaction();
 
         s.save(emp);
-
+        // tx Commiting
         tx.commit();
         s.close();
         sf.close();
