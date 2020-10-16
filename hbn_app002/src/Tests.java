@@ -173,12 +173,20 @@ public class Tests {
 //        System.out.println(str);
 //        System.out.println("Time taken by Concating with String: "+(System.currentTimeMillis()-startTime2)+"ms");
 
+
         List<Integer> lst = Arrays.asList(1,1,1,2,2,2,2,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,7,7,7,7,7,8,8,8,8,9,9,9,9,10);
+//
+//        List<Integer> dList = lst.stream().distinct().limit(5).map(i->i*i).collect(Collectors.toList());
+//
+//        System.out.println(lst);
+//        System.out.println(dList);
 
-        List<Integer> dList = lst.stream().distinct().limit(5).map(i->i*i).collect(Collectors.toList());
-
-        System.out.println(lst);
-        System.out.println(dList);
+        System.out.println(
+//                Stream.of(lst)
+                Stream.of(1,2,3,4,3,2,3,4,1,5,2,6,5,6,2,1,7,3,4,8,2,8,9,5,7,10,9,8)
+                        .distinct()
+                        .collect(Collectors.toList())
+        );
 
 
 
